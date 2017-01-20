@@ -5,16 +5,15 @@
 
 
 		<!-- Header -->
-		<jsp:include page="fragments/header.html"/>
+		<jsp:include page="/fragments/header.html"/>
 		<!-- Navegation Gauche -->
-		<jsp:include page="fragments/menu.html"/>
+		<jsp:include page="/fragments/menu.html"/>
 
 		<div class="col col-sm-9">
 				<div class="panel">
 				<h1 style="color:#ff3333;text-align:center">Les Offres</h1>
 
-					<c:set var="db" value="<%= new ClientDBStub() %>" />
-        	<c:forEach var="client" items="${db.getAll()}">
+        	<c:forEach var="client" items="${clients}">
 					<hr>
 					<h2>${client.user}</h2>
 					<h4>${client.pass}</h4>
@@ -29,4 +28,4 @@
 				</div>
 		</div>
 		<!-- Footer -->
-		<jsp:include page="fragments/footer.html"/>
+		<jsp:include page="/fragments/footer.html"/>

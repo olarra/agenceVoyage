@@ -24,8 +24,15 @@
 
 <servlet>
   <servlet-name>AllClients</servlet-name>
-  <jsp-file>/pages/allClients.jsp</jsp-file>
+  <servlet-class>agence.ClientServlet</servlet-class>
 </servlet>
+
+<servlet-mapping>
+  <servlet-name>AllClients</servlet-name>
+  <url-pattern>/clients</url-pattern>
+</servlet-mapping>
+
+
 
 <servlet>
   <servlet-name>HOME</servlet-name>
@@ -41,11 +48,6 @@
 <servlet-mapping>
   <servlet-name>Compte</servlet-name>
   <url-pattern>/compte</url-pattern>
-</servlet-mapping>
-
-<servlet-mapping>
-  <servlet-name>AllClients</servlet-name>
-  <url-pattern>/clients</url-pattern>
 </servlet-mapping>
 
 

@@ -7,9 +7,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-
-<c:set var="db" value="<%= new ClientDBStub() %>" />
-<c:forEach var="client" items="${db.getAll()}">
+import javax.servlet.RequestDispatcher;
 
 public class ClientServlet extends HttpServlet {
 
@@ -33,9 +31,8 @@ public class ClientServlet extends HttpServlet {
         // HTML Header
         req.setAttribute("clients",clients);
 
-        RequestDispatcher dispatcher;
-        dispatcher = request.getRequestDispatcher("allClients.jsp");
-        dispatcher.forward(req,resp);
+        RequestDispatcher rd=req.getRequestDispatcher("/pages/allClients.jsp");
+        rd.forward(req,resp);
 
 
     }
