@@ -10,8 +10,9 @@
 			<div class="panel">
 			<h1 style="color:#ff3333;text-align:center">Les Offres</h1>
 
-				<c:forEach var="hebergement" items="<%= HebergementDBHandler.getDb().retrieveAll() %>">
+				<c:forEach var="hebergement" items="${hebergements}">
 				<hr>
+
 				<h2>${hebergement.type}</h2>
 				<h4>${hebergement.pays}</h4>
 				<img src="${hebergement.image}" height="100" width="150" class="img-responsive pull-right">${hebergement.description}

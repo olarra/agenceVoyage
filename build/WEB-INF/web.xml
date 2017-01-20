@@ -9,13 +9,13 @@
   version="3.0">
 
 <welcome-file-list>
-  <welcome-file>main.jsp</welcome-file>
+  <welcome-file>/pages/home.jsp</welcome-file>
 </welcome-file-list>
 
-<error-page>
+<!-- <error-page>
   <error-code>404</error-code>
-  <location>/pages/errorPage.jsp</location>
-</error-page>
+ <location>/pages/errorPage.jsp</location>
+</error-page>-->
 
 <servlet>
   <servlet-name>Compte</servlet-name>
@@ -33,11 +33,12 @@
 </servlet-mapping>
 
 
-
 <servlet>
   <servlet-name>HOME</servlet-name>
-  <jsp-file>main.jsp</jsp-file>
+  <servlet-class>hebergement.HebergementServlet</servlet-class>
 </servlet>
+
+
 
 <servlet-mapping>
   <servlet-name>HOME</servlet-name>
