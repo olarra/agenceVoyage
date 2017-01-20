@@ -22,20 +22,18 @@
       db.addClient(cl);
     %>
   </c:when>
-
 </c:choose>
-<!-- Header -->
-<jsp:include page="fragments/header.html"/>
 
-<!-- Main -->
-	<div class="clearfix" id="container">
-		<div class="data" id="navigation">
-			<h2>Navegation</h2>
-				<jsp:include page="fragments/menu.html"/>
-		</div>
-		<div class="data" id="main">
+	<!-- Header -->
+	<jsp:include page="fragments/header.html"/>
+	<!-- Navegation Gauche -->
+	<jsp:include page="fragments/menu.html"/>
 
-      <h1>Creation d'une compte</h1>
+	<div class="col col-sm-9">
+			<div class="panel">
+			<h1 style="color:#ff3333;text-align:center">Inscrivez-vous</h1>
+      <hr>
+
       <%-- Displaying new count form --%>
       <c:choose>
         <c:when test="${param['action']=='setNew'}">
@@ -52,8 +50,8 @@
 
 
       <div class="login-block">
-          <h1>Login</h1>
-          <form method="post" action="compte?action=setNew" id="loggin">
+
+          <form method="post" action="signin?action=setNew" id="loggin">
           <input type="text" size="20" name="user" value="${cl.user}" placeholder="Username" id="username" />
           <input type="text" name="pass" value="${cl.pass}" placeholder="Password" id="password"/>
           <input type="text" name="mail" value="${cl.mail}" placeholder="Email" id="email" />
@@ -61,10 +59,6 @@
           <button type="submit" form="loggin" value="Submit">Submit</button>
       </div>
 
-
-      <jsp:include page="fragments/footer.html" />
-		</div>
 	</div>
-
-<!-- Footer -->
-	<jsp:include page="fragments/footer.html"/>
+	<!-- Footer -->
+		<jsp:include page="fragments/footer.html"/>

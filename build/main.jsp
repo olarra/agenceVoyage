@@ -19,10 +19,8 @@
 				<br><br><br><br>
 				<button class="btn btn-default">More</button>
 				</c:forEach>
-
 				<hr>
 				<h4><a href="#"><i class="glyphicon glyphicon-user"><i class="glyphicon glyphicon-chevron-down"></i></i> Inscrivez-vous</a></h4>
-				<hr>
 			</div>
 	</div>
 	<!-- Footer -->

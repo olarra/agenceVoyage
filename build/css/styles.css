@@ -6,8 +6,6 @@
 
 /* end */
 
-/* custom theme */
-
 header {
 	min-height:230px;
   	margin-bottom:5px;
@@ -134,3 +132,7 @@ h3.highlight  {
     display: inline-block;
     word-wrap: break-word;
 }
+
+hr {
+	border-top : 1px solid #ff3333 !important;
+	}

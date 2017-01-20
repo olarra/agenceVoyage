@@ -8,18 +8,20 @@
   id="WebApp_ID"
   version="3.0">
 
+
 <welcome-file-list>
-  <welcome-file>/pages/home.jsp</welcome-file>
+ <welcome-file>/pages/home.jsp</welcome-file>
 </welcome-file-list>
 
-<!-- <error-page>
+
+<error-page>
   <error-code>404</error-code>
  <location>/pages/errorPage.jsp</location>
-</error-page>-->
+</error-page>
 
 <servlet>
-  <servlet-name>Compte</servlet-name>
-  <jsp-file>/pages/compte.jsp</jsp-file>
+  <servlet-name>SignIn</servlet-name>
+  <jsp-file>/pages/signin.jsp</jsp-file>
 </servlet>
 
 <servlet>
@@ -39,7 +41,6 @@
 </servlet>
 
 
-
 <servlet-mapping>
   <servlet-name>HOME</servlet-name>
   <url-pattern>/home</url-pattern>
@@ -47,8 +48,8 @@
 
 
 <servlet-mapping>
-  <servlet-name>Compte</servlet-name>
-  <url-pattern>/compte</url-pattern>
+  <servlet-name>SignIn</servlet-name>
+  <url-pattern>/signin</url-pattern>
 </servlet-mapping>
 
 
