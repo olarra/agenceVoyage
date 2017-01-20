@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns="http://java.sun.com/xml/ns/javaee"
+  xmlns:web="http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
+  xsi:schemaLocation="http://java.sun.com/xml/ns/javaee
+  http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
+  id="WebApp_ID"
+  version="3.0">
+
+<welcome-file-list>
+  <welcome-file>main.jsp</welcome-file>
+</welcome-file-list>
+
+<error-page>
+  <error-code>404</error-code>
+  <location>/pages/errorPage.jsp</location>
+</error-page>
+
+<servlet>
+  <servlet-name>Compte</servlet-name>
+  <jsp-file>/pages/compte.jsp</jsp-file>
+</servlet>
+
+<servlet>
+  <servlet-name>AllClients</servlet-name>
+  <jsp-file>/pages/allClients.jsp</jsp-file>
+</servlet>
+
+<servlet>
+  <servlet-name>HOME</servlet-name>
+  <jsp-file>main.jsp</jsp-file>
+</servlet>
+
+<servlet-mapping>
+  <servlet-name>HOME</servlet-name>
+  <url-pattern>/home</url-pattern>
+</servlet-mapping>
+
+
+<servlet-mapping>
+  <servlet-name>Compte</servlet-name>
+  <url-pattern>/compte</url-pattern>
+</servlet-mapping>
+
+<servlet-mapping>
+  <servlet-name>AllClients</servlet-name>
+  <url-pattern>/clients</url-pattern>
+</servlet-mapping>
+
+
+<env-entry>
+  <env-entry-name>host</env-entry-name>
+  <env-entry-type>java.lang.String</env-entry-type>
+  <env-entry-value>mysql.info.unicaen.fr</env-entry-value>
+</env-entry>
+
+<env-entry>
+  <env-entry-name>database</env-entry-name>
+  <env-entry-type>java.lang.String</env-entry-type>
+  <env-entry-value>21509313_8</env-entry-value>
+</env-entry>
+
+<env-entry>
+  <env-entry-name>username</env-entry-name>
+  <env-entry-type>java.lang.String</env-entry-type>
+  <env-entry-value>21509313</env-entry-value>
+</env-entry>
+
+<env-entry>
+  <env-entry-name>password</env-entry-name>
+  <env-entry-type>java.lang.String</env-entry-type>
+  <env-entry-value>Radamanth1s</env-entry-value>
+</env-entry>
+
+<env-entry>
+  <env-entry-name>table</env-entry-name>
+  <env-entry-type>java.lang.String</env-entry-type>
+  <env-entry-value>hebergement</env-entry-value>
+</env-entry>
+
+
+</web-app>
