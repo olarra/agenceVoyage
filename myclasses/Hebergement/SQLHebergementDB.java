@@ -41,14 +41,14 @@ public class SQLHebergementDB implements IHebergementDB {
         this.table=table;
         String query=null;
         query="INSERT INTO `"+this.table+"` VALUES(?,?,?,?,?,?,?,?,?)";
-        this.createHebergementStatement=this.link.prepareStatement(query);
+        this.createHebergementStatement=this.link.prepareStatement(query,Statement.RETURN_GENERATED_KEYS);
         query="SELECT * FROM `"+this.table+"` WHERE name=?";
         this.retrieveHebergementStatement=this.link.prepareStatement(query);
     }
 
     @Override
-    public void addHebergement (Hebergement hebergement) throws SQLException {
-        this.create(hebergement);
+    public int addHebergement (Hebergement hebergement) throws SQLException {
+        return this.create(hebergement);
     }
 
     @Override
@@ -93,7 +93,7 @@ public class SQLHebergementDB implements IHebergementDB {
      * @param product The product to store
      * @throws SQLException if a database access error occurs
      */
-    public void create (Hebergement hebergement) throws SQLException {
+    public int create (Hebergement hebergement) throws SQLException {
       this.createHebergementStatement.setInt(1,hebergement.getIdHebergement());
       this.createHebergementStatement.setString(2,hebergement.getType());
       this.createHebergementStatement.setString(3,hebergement.getPays());
@@ -104,6 +104,10 @@ public class SQLHebergementDB implements IHebergementDB {
       this.createHebergementStatement.setString(8,hebergement.getDescription());
       this.createHebergementStatement.setString(9,hebergement.getImage());
       this.createHebergementStatement.execute();
+      ResultSet rs =this.createHebergementStatement.getGeneratedKeys();
+      rs.next();
+      System.out.println(rs);
+      return rs.getInt(1);
     }
     /**
      * Retrieves all the products in the database.

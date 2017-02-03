@@ -8,11 +8,9 @@
   id="WebApp_ID"
   version="3.0">
 
-
 <welcome-file-list>
  <welcome-file>/pages/home.jsp</welcome-file>
 </welcome-file-list>
-
 
 <error-page>
   <error-code>404</error-code>
@@ -20,36 +18,107 @@
 </error-page>
 
 <servlet>
-  <servlet-name>SignIn</servlet-name>
-  <jsp-file>/pages/signin.jsp</jsp-file>
-</servlet>
-
-<servlet>
-  <servlet-name>AllClients</servlet-name>
-  <servlet-class>agence.ClientServlet</servlet-class>
+  <servlet-name>AllUtilisateurs</servlet-name>
+  <servlet-class>utilisateur.UtilisateurServlet</servlet-class>
 </servlet>
 
 <servlet-mapping>
-  <servlet-name>AllClients</servlet-name>
-  <url-pattern>/clients</url-pattern>
+  <servlet-name>AllUtilisateurs</servlet-name>
+  <url-pattern>/utilisateurs</url-pattern>
 </servlet-mapping>
-
 
 <servlet>
   <servlet-name>HOME</servlet-name>
   <servlet-class>hebergement.HebergementServlet</servlet-class>
 </servlet>
 
-
 <servlet-mapping>
   <servlet-name>HOME</servlet-name>
   <url-pattern>/home</url-pattern>
 </servlet-mapping>
 
+<servlet>
+  <servlet-name>AddUtilisateurServlet</servlet-name>
+  <servlet-class>utilisateur.UtilisateurServlet</servlet-class>
+</servlet>
 
 <servlet-mapping>
-  <servlet-name>SignIn</servlet-name>
-  <url-pattern>/signin</url-pattern>
+  <servlet-name>AddUtilisateurServlet</servlet-name>
+  <url-pattern>/addUtilisateurServlet</url-pattern>
+</servlet-mapping>
+
+
+<servlet>
+  <servlet-name>AddUtilisateur</servlet-name>
+  <jsp-file>/pages/addUtilisateur.jsp</jsp-file>
+</servlet>
+
+<servlet-mapping>
+  <servlet-name>AddUtilisateur</servlet-name>
+  <url-pattern>/addUtilisateur</url-pattern>
+</servlet-mapping>
+
+
+<servlet>
+  <servlet-name>Associations</servlet-name>
+  <jsp-file>/pages/showLinks.jsp</jsp-file>
+</servlet>
+
+<servlet-mapping>
+  <servlet-name>Associations</servlet-name>
+  <url-pattern>/showLinks</url-pattern>
+</servlet-mapping>
+
+<servlet>
+  <servlet-name>AddHebergementServlet</servlet-name>
+  <servlet-class>hebergement.HebergementServlet</servlet-class>
+</servlet>
+
+<servlet-mapping>
+  <servlet-name>AddHebergementServlet</servlet-name>
+  <url-pattern>/addHebergementServlet</url-pattern>
+</servlet-mapping>
+
+<servlet>
+  <servlet-name>LoginServlet</servlet-name>
+  <servlet-class>utilisateur.LoginServlet</servlet-class>
+</servlet>
+
+<servlet-mapping>
+  <servlet-name>LoginServlet</servlet-name>
+  <url-pattern>/loginServlet</url-pattern>
+</servlet-mapping>
+
+
+<servlet>
+  <servlet-name>LogoutServlet</servlet-name>
+  <servlet-class>utilisateur.LogoutServlet</servlet-class>
+</servlet>
+
+<servlet-mapping>
+  <servlet-name>LogoutServlet</servlet-name>
+  <url-pattern>/logoutServlet</url-pattern>
+</servlet-mapping>
+
+<servlet>
+  <servlet-name>AddHebergement</servlet-name>
+  <jsp-file>/pages/addHebergement.jsp</jsp-file>
+</servlet>
+
+<servlet-mapping>
+  <servlet-name>AddHebergement</servlet-name>
+  <url-pattern>/addHebergement</url-pattern>
+</servlet-mapping>
+
+
+<servlet>
+  <servlet-name>Login</servlet-name>
+  <jsp-file>/pages/login.jsp</jsp-file>
+</servlet>
+
+<servlet-mapping>
+  <servlet-name>Login</servlet-name>
+  <url-pattern>/login</url-pattern>
 </servlet-mapping>
 
 
@@ -81,6 +150,12 @@
   <env-entry-name>table</env-entry-name>
   <env-entry-type>java.lang.String</env-entry-type>
   <env-entry-value>hebergement</env-entry-value>
+</env-entry>
+
+<env-entry>
+  <env-entry-name>tableUser</env-entry-name>
+  <env-entry-type>java.lang.String</env-entry-type>
+  <env-entry-value>utilisateurs</env-entry-value>
 </env-entry>
 
 

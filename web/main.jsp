@@ -10,6 +10,13 @@
 			<div class="panel">
 			<h1 style="color:#ff3333;text-align:center">Les Offres</h1>
 
+
+			<h2>bienvenu : ${UserNameSession.user} </h2>
+			<p>${UserNameSession.idUtilisateur}</p>
+			<hr>
+
+
+
 				<c:forEach var="hebergement" items="${hebergements}">
 				<hr>
 
