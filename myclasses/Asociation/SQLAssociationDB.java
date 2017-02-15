@@ -36,4 +36,15 @@ public class SQLAssociationDB {
         return res;
       }
 
+
+    public List<Association> loadAssociations () {
+      Session hibernateSession=this.sessionFactory.openSession();
+      Transaction transaction=null;
+      transaction=hibernateSession.beginTransaction();
+      Query query=hibernateSession.createQuery("from Association");
+      List<Association> allAssociations=query.list();
+      hibernateSession.close();
+      return allAssociations;
+  }
+
 }

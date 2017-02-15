@@ -60,14 +60,15 @@
 
 
 <servlet>
-  <servlet-name>Associations</servlet-name>
-  <jsp-file>/pages/showLinks.jsp</jsp-file>
+  <servlet-name>AssociationsServlet</servlet-name>
+  <servlet-class>association.AssociationServlet</servlet-class>
 </servlet>
 
 <servlet-mapping>
-  <servlet-name>Associations</servlet-name>
+  <servlet-name>AssociationsServlet</servlet-name>
   <url-pattern>/showLinks</url-pattern>
 </servlet-mapping>
+
 
 <servlet>
   <servlet-name>AddHebergementServlet</servlet-name>

@@ -42,7 +42,7 @@ public class SQLHebergementDB implements IHebergementDB {
         String query=null;
         query="INSERT INTO `"+this.table+"` VALUES(?,?,?,?,?,?,?,?,?)";
         this.createHebergementStatement=this.link.prepareStatement(query,Statement.RETURN_GENERATED_KEYS);
-        query="SELECT * FROM `"+this.table+"` WHERE name=?";
+        query="SELECT * FROM `"+this.table+"` WHERE idHebergement=?";
         this.retrieveHebergementStatement=this.link.prepareStatement(query);
     }
 
@@ -131,16 +131,17 @@ public class SQLHebergementDB implements IHebergementDB {
      * @param name The name of the product
      * @return A product, or null if none with the given name exists in the database
      * @throws SQLException if a database access error occurs
+     */
 
-    public Service retrieve (String name) throws SQLException {
-        this.retrieveProductStatement.setString(1,name);
-        ResultSet rs=this.retrieveProductStatement.executeQuery();
+    public Hebergement retrieve (Integer idHebergement) throws SQLException {
+        this.retrieveHebergementStatement.setInt(1,idHebergement);
+        ResultSet rs=this.retrieveHebergementStatement.executeQuery();
         if (!rs.next()) {
             return null;
         }
-        return new Product(rs.getString("name"),rs.getFloat("pricePerKg"),rs.getFloat("weight"));
+        return new Hebergement(rs.getInt("idHebergement"),rs.getString("type"),rs.getString("pays"),rs.getString("surface"),rs.getString("npieces"),rs.getString("addresse"),rs.getString("terrain_exterieur"),rs.getString("description"),rs.getString("image"));
     }
-*/
+
     /**
      * Drops the table from the database. Nothing occurs if the table does not exist.
      * @throws SQLException if a database access error occurs
@@ -155,11 +156,18 @@ public class SQLHebergementDB implements IHebergementDB {
      * Deletes a product. Nothing occurs in case the product does not exist in the database.
      * @param product The product
      * @throws SQLException if a database access error occurs
+    */
 
-    public void delete (Product product) throws SQLException {
-        String query="DELETE FROM `"+this.table+"` WHERE name=\""+product.getName()+"\"";
+    public void deleteHebergement (Integer idHebergement) throws SQLException {
+        String query="DELETE FROM `"+this.table+"` WHERE idHebergement="+idHebergement+"";
         Statement statement=this.link.createStatement();
         statement.execute(query);
-    }*/
+    }
+
+    public void deleteAssociation (Integer idHebergement) throws SQLException {
+        String query="DELETE FROM relationUtilisateurHebergement WHERE idHebergement="+idHebergement+"";
+        Statement statement=this.link.createStatement();
+        statement.execute(query);
+    }
 
 }
