@@ -15,8 +15,9 @@
 				<p>idUser : ${UserNameSession.idUtilisateur}</p>
 
 				<c:forEach var="hebergement" items="${hebergements}">
-				<hr>
+
 					<c:if test="${hebergement.idHebergement != null}">
+						<hr>
 						<p>type : ${hebergement.idHebergement}</p>
 						<p>type : ${hebergement.type}</p>
 						<p>pays : ${hebergement.pays}</p>

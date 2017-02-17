@@ -30,8 +30,8 @@ header {
 /* theme */
 
 body {
-  color:#828282;
-  background-color:#eee;
+  color:#828282 !important;
+  background-color:#eee !important;
 }
 
 a,a:hover {
@@ -40,7 +40,7 @@ a,a:hover {
 }
 
 .highlight-bk {
-	background-color:#ff3333;
+	background-color:#ff3333 !important;
     padding:1px;
     width:100%;
 }
@@ -56,8 +56,8 @@ h3.highlight  {
 }
 
 .navbar {
-	background-color:#ff3333;
-  	color:#ffffff;
+	background-color:#ff3333 !important;
+  	color:#ffffff !important;
     border:0;
   	border-radius:0;
 }
@@ -75,11 +75,11 @@ h3.highlight  {
 }
 .navbar-nav > .active > a, .navbar-nav > .active > a:hover, .navbar-nav > .active > a:focus {
     color: #ffffff;
-	background-color:transparent;
+	background-color:transparent !important;
 }
 .navbar-nav > .open > a, .navbar-nav > .open > a:hover, .navbar-nav > .open > a:focus {
 	color: #f0f0f0;
-	background-color:transparent;
+	background-color:transparent !important;
   	opacity:.9;
     border-color:#ff3333;
 }
@@ -136,3 +136,47 @@ h3.highlight  {
 hr {
 	border-top : 1px solid #ff3333 !important;
 	}
+
+.Roboto-thin{
+	font-family: 'Roboto', sans-serif;
+	font-weight: 100;
+}
+
+.Roboto-light{
+	font-family: 'Roboto', sans-serif;
+	font-weight: 300;
+}
+
+.Roboto-regular{
+	font-family: 'Roboto', sans-serif;
+	font-weight: 400;
+}
+
+.Roboto-medium{
+	font-family: 'Roboto', sans-serif;
+	font-weight: 500;
+}
+
+.Roboto-bold{
+	font-family: 'Roboto', sans-serif;
+	font-weight: 700;
+}
+
+
+  .div
+        {
+
+          border:1px solid #ccc;
+          padding:25px;
+          border-left:4px solid red;
+          margin:20px;
+        }
+
+        select
+        {
+					background: none;
+          width:230px;
+          height:35px;
+          border:1px solid red;
+          text-indent:25px;
+        }

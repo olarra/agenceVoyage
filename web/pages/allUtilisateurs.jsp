@@ -8,20 +8,30 @@
 		<jsp:include page="/fragments/menu.html"/>
 
 		<div class="col col-sm-9">
-				<div class="panel">
-				<h1 style="color:#ff3333;text-align:center">Utilisateurs</h1>
+	<div class="panel">
 
-     <c:forEach var="utilisateur" items="${utilisateur}">
-					<hr>
-					<h2>${utilisateur.idUtilisateur}</h2>
-					<h2>${utilisateur.user}</h2>
-					<h4>${utilisateur.pass}</h4>
-					<p>${utilisateur.mail}</p>
-					<br><br><br><br>
-					<button class="btn btn-default">More</button>
-				</c:forEach>
+	<div class="w3-container">
+  <h2>Liste des utilisateurs</h2>
+	<hr>
 
-				</div>
+  <ul class="w3-ul w3-card-4">
+		<c:forEach var="utilisateur" items="${utilisateur}">
+    <li class="w3-padding-16">
+      <span onclick="this.parentElement.style.display='none'"
+      class="w3-closebtn w3-padding w3-margin-right w3-medium">&times;</span>
+      <img src="http://tinygraphs.com/labs/isogrids/hexa16/${utilisateur}?theme=berrypie&numcolors=4&size=60&fmt=svg" class="w3-left w3-circle w3-margin-right" style="width:60px">
+      <span class="w3-xlarge">user : ${utilisateur.user}</span><br>
+      <span>e-mail : ${utilisateur.mail}</span>
+    </li>
+		</c:forEach>
+  </ul>
+</div>
+</br>
+</br>
+	</div>
+
+
+
 		</div>
 		<!-- Footer -->
 		<jsp:include page="/fragments/footer.html"/>
