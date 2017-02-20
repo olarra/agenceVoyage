@@ -16,12 +16,12 @@
       <div class="login-block">
 
           <form method="post" action="loginServlet" id="loggin">
-          <input type="text" size="20" name="user" value="${cl.user}" placeholder="Username" id="username" />
-          <input type="text" name="pass" value="${cl.pass}" placeholder="Password" id="password"/>
+            <input type="text" size="20" name="user" value="${cl.user}" placeholder="Username" id="username" />
+            <input type="password" name="pass" value="${cl.pass}" placeholder="Password" id="password"/>
           </form>
           <button style="background:#3498db; border:1px solid #2ecc71;" type="submit" form="loggin" value="Submit">Submit</button>
       </div>
 
-  </div>
+   </div>
   <!-- Footer -->
     <jsp:include page="fragments/footer.html"/>

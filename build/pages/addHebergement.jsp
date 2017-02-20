@@ -49,23 +49,52 @@
 
 	<div class="col col-sm-9">
 			<div class="panel">
-			<h1 style="color:#ff3333;text-align:center">Inscrivez-vous</h1>
+			<h1 style="color:#ff3333;text-align:center">Proposez un longement</h1>
       <hr>
+  <div class="login-block">
+      <form method="post" action="addHebergementServlet?action=setNew" id="loggin">
 
+      <div class="inner-addon left-addon">
+        <i class="glyphicon glyphicon-home"></i>
+        <input type="text" size="20" name="type" value="${hb.type}" placeholder="Type"/>
+      </div>
 
+      <div class="inner-addon left-addon">
+        <i class="glyphicon glyphicon-globe"></i>
+        <input type="text" size="20" name="pays" value="${hb.pays}" placeholder="Pays"/>
+      </div>
 
-      <div class="login-block">
+      <div class="inner-addon left-addon">
+        <i class="glyphicon glyphicon-tag"></i>
+        <input type="text" size="20" name="surface" value="${hb.surface}" placeholder="Surface"/>
+      </div>
 
-          <form method="post" action="addHebergementServlet?action=setNew" id="loggin">
-          <input type="text" size="20" name="type" value="${hb.type}" placeholder="type"/>
-          <input type="text" size="20" name="pays" value="${hb.pays}" placeholder="pays"/>
-          <input type="text" size="20" name="surface" value="${hb.surface}" placeholder="surface"/>
-          <input type="text" size="20" name="npieces" value="${hb.npieces}" placeholder="npieces"/>
-          <input type="text" size="20" name="addresse" value="${hb.addresse}" placeholder="addresse"/>
-          <input type="text" size="20" name="terrain_exterieur" value="${hb.terrain_exterieur}" placeholder="terrain_exterieur"/>
-          <input type="text" size="20" name="description" value="${hb.description}" placeholder="description"/>
-          <input type="text" size="20" name="image" value="${hb.image}" placeholder="image"/>
-          </form>
+      <div class="inner-addon left-addon">
+        <i class="glyphicon glyphicon-home"></i>
+        <input type="text" size="20" name="npieces" value="${hb.npieces}" placeholder="Nombre pi&egrave;ces"/>
+      </div>
+
+      <div class="inner-addon left-addon">
+        <i class="glyphicon glyphicon-map-marker"></i>
+        <input type="text" size="20" name="addresse" value="${hb.addresse}" placeholder="Addresse"/>
+      </div>
+
+      <div class="inner-addon left-addon">
+        <i class="glyphicon glyphicon-tree-deciduous"></i>
+        <input type="text" size="20" name="terrain_exterieur" value="${hb.terrain_exterieur}" placeholder="Terrain ext&eacute;rieur"/>
+      </div>
+
+      <div class="inner-addon left-addon">
+        <i class="glyphicon glyphicon-comment"></i>
+        <input type="text" size="20" name="description" value="${hb.description}" placeholder="Description"/>
+      </div>
+
+      <div class="inner-addon left-addon">
+        <i class="glyphicon glyphicon-picture"></i>
+        <input type="text" size="20" name="image" value="${hb.image}" placeholder="Link de l'image"/>
+      </div>
+
+      </form>
           <button type="submit" form="loggin" value="Submit">Submit</button>
       </div>
 

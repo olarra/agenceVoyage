@@ -34,7 +34,7 @@ public class LoginServlet extends HttpServlet {
              HttpSession session = req.getSession();
              session.setAttribute("UserNameSession", utilisateurLogged);
 
-             RequestDispatcher rd = req.getRequestDispatcher("/main.jsp");
+             RequestDispatcher rd = req.getRequestDispatcher("/home");
              rd.forward(req,resp);
            }
            catch (NamingException | SQLException ex ) {
